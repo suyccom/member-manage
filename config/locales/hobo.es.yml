@@ -16,15 +16,15 @@ es:
       heading: "Indice %{model}"
 
     new:
-      title: "Nuevo Registro de %{model}"
-      heading: "Nuevo Registro de %{model}"
+      title: "Nuevo %{model}"
+      heading: "Nuevo %{model}"
 
     show:
       title: "%{model}"
       heading: "%{model} %{name}"
       back_link: "Atrás"
       edit_link: "Actualizar %{model}"
-      new_link: "Nuevo Registro %{model}"
+      new_link: "Nuevo %{model}"
       add_form_heading: "Añadir %{model}"
 
     edit:
@@ -41,8 +41,8 @@ es:
       subheading: "Para:"
 
     new_for_owner:
-      title: "Nuevo Registro de %{model} para"
-      heading: "Nuevo Registro de %{model}"
+      title: "Nuevo %{model} para"
+      heading: "Nuevo %{model}"
       subheading: "Para:"
 
     login:
@@ -87,7 +87,7 @@ es:
 
     # default hobo action translation
     actions:
-      new: "Nuevo Registro de %{model}"
+      new: "Nuevo %{model}"
       create: "Crear %{model}"
       previous: "Precedente"
       next: "Próxima"
