@@ -6,7 +6,9 @@
 <include src="taglibs/auto/rapid/pages"/>
 <include src="taglibs/auto/rapid/forms"/>
 
-<set-theme name="clean"/>
+<include src="hobo-contrib-all" plugin="hobo-contrib"/>
+
+<set-theme name="nice"/>
 
 <extend tag="page">
   <old-page merge>

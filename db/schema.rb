@@ -11,11 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111215114956) do
+ActiveRecord::Schema.define(:version => 20120117165053) do
 
-  create_table "actions", :force => true do |t|
-    t.date     "action_date"
-    t.string   "action_title"
+  create_table "activities", :force => true do |t|
+    t.date     "date"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "activity_type_id"
+  end
+
+  add_index "activities", ["activity_type_id"], :name => "index_activities_on_activity_type_id"
+
+  create_table "activity_types", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -32,15 +42,15 @@ ActiveRecord::Schema.define(:version => 20111215114956) do
 
   add_index "advisings", ["member_id"], :name => "index_advisings_on_member_id"
 
-  create_table "member_actions", :force => true do |t|
+  create_table "member_activities", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "member_id"
-    t.integer  "action_id"
+    t.integer  "activity_id"
   end
 
-  add_index "member_actions", ["action_id"], :name => "index_member_actions_on_action_id"
-  add_index "member_actions", ["member_id"], :name => "index_member_actions_on_member_id"
+  add_index "member_activities", ["activity_id"], :name => "index_member_activities_on_activity_id"
+  add_index "member_activities", ["member_id"], :name => "index_member_activities_on_member_id"
 
   create_table "members", :force => true do |t|
     t.string   "name"

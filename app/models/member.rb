@@ -21,8 +21,8 @@ class Member < ActiveRecord::Base
 
 	# --- Relations --- #
 	has_many :advisings
-	has_many :actions, :through => :member_actions
-	has_many :member_actions, :dependent => :destroy
+	has_many :activities, :through => :member_activities
+	has_many :member_activities, :dependent => :destroy
 
   # --- Permissions --- #
 
