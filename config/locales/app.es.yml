@@ -49,6 +49,10 @@ es:
         email: Email
         member_since: Miembro desde
         disability_percent: Porcentaje de discapacidad
+      activity:
+        start_date: Fecha inicio
+        end_date: Fecha fin
+        title: Título
 #    attribute_help:
 #      user:
 #        email_address:
