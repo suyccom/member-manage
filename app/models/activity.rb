@@ -3,8 +3,9 @@ class Activity < ActiveRecord::Base
   hobo_model # Don't put anything above this
 
   fields do
-    date  :date
-    title :string
+    start_date  :date
+    end_date    :date
+    title       :string
     timestamps
   end
 
