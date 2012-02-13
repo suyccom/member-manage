@@ -10,6 +10,10 @@ module MemberManage
   class Application < Rails::Application
   config.i18n.default_locale = :es
   
+  
+  I18n.default_locale = :es
+  #config.hobo.show_translation_keys = true
+  
   config.hobo.dryml_only_templates = true
 
   

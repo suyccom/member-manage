@@ -19,6 +19,18 @@ es:
       user:
         one: Usuario
         other: Usuarios
+      activity:
+        one: Actividad
+        other: Actividades
+      advising:
+        one: Asesoramiento
+        other: Asesoramientos
+      member:
+        one: Usuario
+        other: Usuarios
+      activity_type:
+        one: Tipo de actividad
+        other: Tipos de actividades
     attributes:
       user:
         name: Nombre
@@ -26,6 +38,21 @@ es:
         current_password: Contraseña Actual
         password_confirmation: Confirmación Contraseña
         email_address: Correo Electrónico
+      member:
+        surname: Apellido
+        address: Dirección
+        id_card: DNI
+        birth_date: Fecha de nacimiento
+        gender: Sexo
+        phone: Teléfono
+        mobile: Móvil
+        email: Email
+        member_since: Miembro desde
+        disability_percent: Porcentaje de discapacidad
+      activity:
+        start_date: Fecha inicio
+        end_date: Fecha fin
+        title: Título
 #    attribute_help:
 #      user:
 #        email_address:
