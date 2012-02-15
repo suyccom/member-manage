@@ -8,6 +8,17 @@
 
 <include src="hobo-contrib-all" plugin="hobo-contrib"/>
 
+<def tag="app-name"><t key="front.app_name">Member manage</t></def>
+
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item href="#{base_url}/"><t key="front.home">Home</t></nav-item>
+    <nav-item with="&Activity"><ht key="activity.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Advising"><ht key="advising.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Member"><ht key="member.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+  </navigation>
+</def>
+
 <set-theme name="nice"/>
 
 <extend tag="page">
