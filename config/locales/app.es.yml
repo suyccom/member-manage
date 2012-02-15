@@ -10,6 +10,19 @@
 
 es:
 
+  front:
+    app_name: Gestión de usuarios
+    home: Inicio
+    index:
+      welcome: "Bienvenido a"
+      stats: "Estadísticas"
+      total: "Número total de usuarios"
+      gender_graph: "Gráfico por género"
+
+  member/genders:
+    male: "Hombre"
+    female: "Mujer"
+
   attributes:
     created_at: Creado el
     updated_at: Actualizado el

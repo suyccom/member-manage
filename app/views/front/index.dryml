@@ -1,14 +1,14 @@
-<page title="Home">
+<page title="Inicio">
 
   <body: class="front-page"/>
 
   <content:>
     <header class="content-header">
-      <h1>Welcome to <app-name/></h1>
+      <h1><t key="front.index.welcome">Welcome to</t> <app-name/></h1>
       <section class="welcome-message">
-        <h3>Statistics</h3>
-        <h4>Total number of members : <%= Member.count %></h4>
-        <h4>Gender graphic : </h4>
+        <h3><t key="front.index.stats">Statistics</t></h3>
+        <h4><t key="front.index.total">Total number of members</t> : <%= Member.count %></h4>
+        <h4><t key="front.index.gender_graph">Gender graphic</t> : </h4>
 
         <% if User.count == 0 -%>
           <h3 style="margin-top: 20px;">There are no user accounts - please provide the details of the site administrator</h3>
