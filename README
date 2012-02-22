@@ -1,26 +1,18 @@
-El sistema gestiona USUARIOS:
-	- Datos personales:
-		- Nombre
-		- Apellidos
-		- Dirección completa
-		- DNI
-		- Fecha de nacimiento
-		- Género
-		- Telf. fijo
-		- Telf. móvil
-		- Email
-		- Fecha de alta
-		- Socio (SI/NO)
-		- Certificado de minusvalía (SI/NO)
-			- Porcentaje
-			
-Se realizan ASESORAMIENTOS a los USUARIOS:
-	- Fecha asesoramiento
-	- Tipo contacto:
-		- Personal
-		- Telefónico
-		- Correo electrónico
-		- Otros
+Descripción del sistema:
+------------------------
+
+Este sistema gestiona ASESORAMIENTOS. Los asesoramientos pueden ser dirigidos a:
+ - USUARIOS: personas que acuden a la asociación. Sus datos son recavados.
+ - EMPRESAS: públicas o privadas. Sus datos son recabados. Los asesoramientos a Empresas se enmarcan dentro de un PROYECTO.
+ - CONSULTAS: personas o empresas que llaman por telf. o escriben un correo.
+ 
+Este sistema gestiona ACTIVIDADES. En las actividades participan USUARIOS.
+
+Tablas:
+-------
+
+Los ASESORAMIENTOS tienen:
+	- Fecha asesoramiento.
 	- Tipo asesoramiento:
 		- Información general
 		- Productos de apoyo
@@ -29,8 +21,50 @@ Se realizan ASESORAMIENTOS a los USUARIOS:
 		- Gestión de subvenciones
 		- Otros
 	- Contenido asesoramiento
+	- Tipo contacto (ver descripción del sistema):
+		- Usuarios
+		- Empresas
+		- Consultas
 
-La entidad realiza ACTIVIDADES en las que participan los USUARIOS:
+Los USUARIOS tienen:
+	- Nombre
+	- Apellidos
+	- Dirección completa
+  - Código postal
+  - Población
+  - Provincia
+	- DNI
+	- Fecha de nacimiento
+	- Género
+	- Telf. fijo
+	- Telf. móvil
+	- Correo electrónico
+	- Socio (SI/NO)
+	- Certificado de minusvalía (SI/NO)
+		- Porcentaje
+	- Audífonos (SI/NO)
+	  - Tipo de audífono
+	  - Centro audiológico
+	- Diagnóstico
+	- ¿Datos de la audiometria?
+		
+Las EMPRESAS tienen:
+  - Nombre
+  - Dirección completa
+  - Código postal
+  - Población
+  - Provincia
+  - Persona de contacto
+  - Web
+  - Telf. fijo
+  - Telf. móvil
+  - Correo electrónico
+  - Pública / Privada
+
+Los PROYECTOS tienen:
+  - Titulo proyecto
+
+Las ACTIVIDADES tienen:
 	- Fecha acción
 	- Título acción
 	- Tipo acción:
