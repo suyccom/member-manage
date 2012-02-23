@@ -9,7 +9,6 @@
 # please post it to http://hobousers.googlegroups.com. Thank you!
 
 es:
-
   front:
     app_name: Gestión de usuarios
     home: Inicio
@@ -18,15 +17,12 @@ es:
       stats: "Estadísticas"
       total: "Número total de usuarios"
       gender_graph: "Gráfico por género"
-
   member/genders:
     male: "Hombre"
     female: "Mujer"
-
   attributes:
     created_at: Creado el
     updated_at: Actualizado el
-
   activerecord:
     models:
       user:
@@ -43,7 +39,7 @@ es:
         other: Usuarios
       activity_type:
         one: Tipo de actividad
-        other: Tipos de actividades
+        other: Tipos de actividad
     attributes:
       user:
         name: Nombre
@@ -52,6 +48,7 @@ es:
         password_confirmation: Confirmación Contraseña
         email_address: Correo Electrónico
       member:
+        name: Nombre
         surname: Apellido
         address: Dirección
         id_card: DNI
@@ -59,8 +56,10 @@ es:
         gender: Sexo
         phone: Teléfono
         mobile: Móvil
-        email: Email
+        email: Correo electrónico
         member_since: Miembro desde
+        member: Socio/a
+        disability: Discapacidad
         disability_percent: Porcentaje de discapacidad
       activity:
         start_date: Fecha inicio
@@ -69,3 +68,6 @@ es:
 #    attribute_help:
 #      user:
 #        email_address:
+  member:
+    index:
+      heading: Lista de Usuarios

@@ -12,8 +12,8 @@ es:
     index:
       # if you uncomment the following you will loose the automatic selection of dinamically pluralized nav-tabs
       # if you need a different title you should implement a different way to select the tab on your own
-      #title: "Indice %{model}"
-      heading: "Indice %{model}"
+      title: "Lista de %{model}"
+      heading: "Lista de %{model}"
 
     new:
       title: "Nuevo %{model}"

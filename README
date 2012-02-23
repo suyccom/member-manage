@@ -3,7 +3,7 @@ Descripción del sistema:
 
 Este sistema gestiona ASESORAMIENTOS. Los asesoramientos pueden ser dirigidos a:
  - USUARIOS: personas que acuden a la asociación. Sus datos son recavados.
- - EMPRESAS: públicas o privadas. Sus datos son recabados. Los asesoramientos a Empresas se enmarcan dentro de un PROYECTO.
+ - EMPRESAS: públicas o privadas. Sus datos son recavados. Los asesoramientos a Empresas se enmarcan dentro de un PROYECTO. Una empresa puede tener varios PROYECTOS, pero un PROYECTO solo pertenece a una empresa.
  - CONSULTAS: personas o empresas que llaman por telf. o escriben un correo.
  
 Este sistema gestiona ACTIVIDADES. En las actividades participan USUARIOS.

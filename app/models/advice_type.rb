@@ -1,15 +1,15 @@
-class Advising < ActiveRecord::Base
+class AdviceType < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
   fields do
-    advice_date    :date
-    advice_content :text
+    name        :string
+    description :text
     timestamps
   end
 
 	# --- Relations --- #
-	belongs_to :advice_type
+	has_many :advisings
 
   # --- Permissions --- #
 

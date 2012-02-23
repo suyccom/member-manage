@@ -12,7 +12,7 @@ module MemberManage
   
   
   I18n.default_locale = :es
-  #config.hobo.show_translation_keys = true
+#  config.hobo.show_translation_keys = true
   
   config.hobo.dryml_only_templates = true
 

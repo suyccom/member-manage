@@ -8,6 +8,9 @@ class Member < ActiveRecord::Base
     name               :string
     surname            :string
     address            :string
+    postal_code        :string
+    location           :string
+    province           :string
     id_card            :string
     birth_date         :date
     gender             Gender
@@ -22,7 +25,6 @@ class Member < ActiveRecord::Base
   end
 
 	# --- Relations --- #
-	has_many :advisings
 	has_many :activities, :through => :member_activities
 	has_many :member_activities, :dependent => :destroy
 
