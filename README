@@ -46,8 +46,9 @@ Los USUARIOS tienen:
 	  - Tipo de audífono
 	  - Centro audiológico
 	- Diagnóstico
-	- ¿Datos de la audiometria?
-		
+	- MUCHAS AUDIMETRÍAS
+	
+	
 Las EMPRESAS tienen:
   - Nombre
   - Dirección completa
@@ -74,3 +75,10 @@ Las ACTIVIDADES tienen:
 		- Punto de encuentro
 		- Estrategias de comunicación
 		- Otras
+		
+Las audiometrías tienen 4 columnas y 2 filas (Oido Derecho/Oido Izquierdo)
+  - 4 campos del oido izquierdo
+  - 4 campos del oido derecho
+  - fecha_audiometria
+  - centro_audiometria		
+

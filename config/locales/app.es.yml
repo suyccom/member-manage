@@ -20,6 +20,13 @@ es:
   member/genders:
     male: "Hombre"
     female: "Mujer"
+  advising/contacttypes:
+    user: Usuario
+    company: Empresa
+    contact: Consulta
+  company/companytypes:
+    public: Pública
+    private: Privada
   attributes:
     created_at: Creado el
     updated_at: Actualizado el
@@ -40,6 +47,19 @@ es:
       activity_type:
         one: Tipo de actividad
         other: Tipos de actividad
+      company:
+        one: Empresa
+        other: Empresas
+      audiometry:
+        one: Audiometría
+        other: Audiometrías
+      advice_type:
+        one: Tipo de asesoramiento
+        other: Tipos de asesoramiento
+      project:
+        one: Proyecto
+        other: Proyectos
+      
     attributes:
       user:
         name: Nombre
@@ -65,6 +85,44 @@ es:
         start_date: Fecha inicio
         end_date: Fecha fin
         title: Título
+        activity_type: Tipo de actividad
+        members: Usuarios
+      audiometry:
+        audiometry_date: Fecha de audiometría
+        audiometry_center: Centro de audiometría
+        re500: Derecho 500
+        re1000: Derecho 1000
+        re2000: Derecho 2000
+        re3000: Derecho 3000/4000
+        le500: Izquierdo 500
+        le1000: Izquierdo 1000
+        le2000: Izquierdo 2000
+        le3000: Izquierdo 3000
+      advising:
+        advice_date: Fecha de asesoramiento
+        advice_content: Contenido del asesoramiento
+        contact_type: Tipo de contacto
+        company: Empresa
+        member: Usuario
+        advice_type: Tipo de asesoramiento
+      advice_type:
+        name: Nombre
+        description: Descripción
+      project:
+        name: Nombre
+        company: Empresa
+      company:
+        name: Nombre
+        address: Dirección
+        postal_code: Código postal
+        location: Población
+        province: Provincia
+        contact_person: Persona de contacto
+        website: Web
+        phone: Teléfono
+        mobile: Teléfono móvil
+        email: Email
+        company_type: Tipo de empresa
 #    attribute_help:
 #      user:
 #        email_address:

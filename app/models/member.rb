@@ -17,14 +17,20 @@ class Member < ActiveRecord::Base
     phone              :string
     mobile             :string
     email              :email_address
-    member_since       :date
     member             :boolean
     disability         :boolean
     disability_percent :integer
+    hearing_aid        :boolean
+    hearing_aid_type   :string
+    hearing_aid_center :string
+    diagnosis          :text
     timestamps
   end
 
 	# --- Relations --- #
+	has_many :audiometries
+	children :audiometries
+	has_many :advisings
 	has_many :activities, :through => :member_activities
 	has_many :member_activities, :dependent => :destroy
 

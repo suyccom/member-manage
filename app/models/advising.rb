@@ -2,14 +2,19 @@ class Advising < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
+  Contacttype = HoboFields::Types::EnumString.for(:user,:company,:contact)
+
   fields do
     advice_date    :date
     advice_content :text
+    contact_type   Contacttype
     timestamps
   end
 
 	# --- Relations --- #
 	belongs_to :advice_type
+	belongs_to :member
+	belongs_to :company
 
   # --- Permissions --- #
 
