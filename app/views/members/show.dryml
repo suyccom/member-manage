@@ -1,0 +1,91 @@
+<show-page/>
+
+
+
+<def tag="form" for="Audiometry">
+  <form merge param="default">
+    <error-messages param/>
+    
+    <div class="table-plus audiometry-input-table">
+      <table>
+        <thead>
+        <tr class="field-heading-row">
+          <th>Ear</th>
+          <th>500</th>
+          <th>1000</th>
+          <th>2000</th>
+          <th>3000/4000</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Right</td>
+            <td><input type="text" name="audiometry[re500]"/></td>
+            <td><input type="text" name="audiometry[re1000]"/></td>
+            <td><input type="text" name="audiometry[re2000]"/></td>
+            <td><input type="text" name="audiometry[re3000]"/></td>
+          </tr>
+          <tr>
+            <td>Left</td>
+            <td><input type="text" name="audiometry[le500]"/></td>
+            <td><input type="text" name="audiometry[le1000]"/></td>
+            <td><input type="text" name="audiometry[le2000]"/></td>
+            <td><input type="text" name="audiometry[le3000]"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <field-list fields="audiometry_date, audiometry_center, member" param/>
+    <div param="actions">
+      <submit label="#{ht 'audiometry.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+<def tag="card" for="Audiometry">
+  <card class="audiometry" param="default" merge>
+    <header: param>
+      <h4 param="heading">Audiometría realizada el <this.audiometry-date.to-date/></h4>
+      <div param="actions">
+        <delete-button label="X" param/>
+      </div>
+    </header:>
+    
+    <body:>
+    
+    <field-list fields="audiometry_center"/>
+    
+    <div class="table-plus audiometry-input-table">
+      <table>
+        <thead>
+        <tr class="field-heading-row">
+          <th>Ear</th>
+          <th>500</th>
+          <th>1000</th>
+          <th>2000</th>
+          <th>3000/4000</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Right</td>
+            <td><this.re500/></td>
+            <td><this.re1000/></td>
+            <td><this.re2000/></td>
+            <td><this.re3000/></td>
+          </tr>
+          <tr>
+            <td>Left</td>
+            <td><this.le500/></td>
+            <td><this.le1000/></td>
+            <td><this.le2000/></td>
+            <td><this.le3000/></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </body:>
+  </card>
+</def>
