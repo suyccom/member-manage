@@ -4,6 +4,8 @@ class FrontController < ApplicationController
 
   def index; end
 
+  def configuration; end
+
   def summary
     if !current_user.administrator?
       redirect_to user_login_path

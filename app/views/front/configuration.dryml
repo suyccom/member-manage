@@ -1,0 +1,36 @@
+<page title="Inicio">
+
+  <body: class="front-page"/>
+
+  <content:>
+
+    <header class="content-header">
+      <h1>
+        <t key="front.configuration.welcome">
+          Choose the option you want to change
+        </t>
+      </h1>
+      <section class="reports-card">
+        <a href="/activity_types">
+          <t key="activerecord.models.activity_type.other">
+            Activity types
+          </t>
+        </a>
+      </section>
+      <section class="reports-cards">
+        <a href="/advice_types">
+          <t key="activerecord.models.advice_type.other">
+            Advice types
+          </t>
+        </a>
+      </section>
+      <section class="report-cards">
+        <a href="/projects">
+          <t key="activerecord.models.projects.other">
+            Projects
+          </t>
+        </a>
+      </section>
+    </header>
+  </content:>
+</page>

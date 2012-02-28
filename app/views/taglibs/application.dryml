@@ -8,7 +8,9 @@
 
 <include src="hobo-contrib-all" plugin="hobo-contrib"/>
 
-<def tag="app-name"><t key="front.app_name">Member manage</t></def>
+<def tag="app-name">
+  <t key="front.app_name">Member manage</t>
+</def>
 
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
@@ -16,35 +18,20 @@
     <nav-item with="&Advising"><ht key="advising.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Activity"><ht key="activity.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Member"><ht key="member.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&Company"><ht key="company.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Company">
+      <ht key="company.nav_item" count="100">
+        <model-name-human count="100"/>
+      </ht>
+    </nav-item>
+    <nav-item href="/front/configuration">
+      <t key="front.configuration.name">
+        Configuration
+      </t>
+    </nav-item>
   </navigation>
 </def>
 
 <set-theme name="nice"/>
-
-<!-- Subimos al menú superior los apartados menos usados. -->
-<extend tag="account-nav">
-  <old-account-nav merge>
-    <logged-in-as: append>
-      <li>
-        <a href="/activity_types">
-          <t key="activerecord.models.activity_type.other">Activity types</t>
-        </a>
-      </li>
-      <li>
-        <a href="/advice_types">
-          <t key="activerecord.models.advice_type.other">Advice types</t>
-        </a>
-      </li>
-      <li>
-        <a href="/projects">
-          <t key="activerecord.models.projects.other">Projects</t>
-        </a>
-      </li>
-    </logged-in-as:>
-    <account: replace/>
-  </old-account-nav>
-</extend>
 
 <extend tag="page">
   <old-page merge>

@@ -17,6 +17,9 @@ es:
       stats: "Estadísticas"
       total: "Número total de usuarios"
       gender_graph: "Gráfico por género"
+    configuration: 
+      name: "Configuración"
+      welcome: "Elige la opción que deseas modificar:"
   member/genders:
     male: "Hombre"
     female: "Mujer"

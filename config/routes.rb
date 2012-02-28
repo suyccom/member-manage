@@ -2,6 +2,9 @@ MemberManage::Application.routes.draw do
   root :to => 'front#index'
 
   match 'search' => 'front#search', :as => 'site_search'
+  
+  match 'front/index' => 'front#index'
+  match 'front/configuration' => 'front#configuration'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
