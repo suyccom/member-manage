@@ -10,21 +10,21 @@
           Choose the option you want to change
         </t>
       </h1>
-      <section class="reports-card">
+      <section class="config-card" id="activity_types">
         <a href="/activity_types">
           <t key="activerecord.models.activity_type.other">
             Activity types
           </t>
         </a>
       </section>
-      <section class="reports-cards">
+      <section class="config-card" id="advice_types">
         <a href="/advice_types">
           <t key="activerecord.models.advice_type.other">
             Advice types
           </t>
         </a>
       </section>
-      <section class="report-cards">
+      <section class="config-card" id="projects">
         <a href="/projects">
           <t key="activerecord.models.projects.other">
             Projects
