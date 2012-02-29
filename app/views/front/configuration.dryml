@@ -1,36 +1,44 @@
-<page title="Inicio">
-
+<page title="Configuración">
   <body: class="front-page"/>
-
   <content:>
-
     <header class="content-header">
       <h1>
         <t key="front.configuration.welcome">
           Choose the option you want to change
         </t>
       </h1>
+    </header>
+    <section class="content-body">
       <section class="config-card" id="activity_types">
         <a href="/activity_types">
           <t key="activerecord.models.activity_type.other">
             Activity types
           </t>
-        </a>
+        </a> : 
+        <t key="activerecord.models.activity_type.description">
+          Activity types, availables when creating new Activity
+        </t>
       </section>
       <section class="config-card" id="advice_types">
         <a href="/advice_types">
           <t key="activerecord.models.advice_type.other">
             Advice types
           </t>
-        </a>
+        </a> : 
+        <t key="activerecord.models.advice_type.description">
+          Advice types, availables when creating new Advice
+        </t>
       </section>
       <section class="config-card" id="projects">
         <a href="/projects">
-          <t key="activerecord.models.projects.other">
+          <t key="activerecord.models.project.other">
             Projects
           </t>
-        </a>
+        </a> : 
+        <t key="activerecord.models.project.description">
+          Projects related to each company
+        </t>
       </section>
-    </header>
+    </section>
   </content:>
 </page>

@@ -50,6 +50,7 @@ es:
       activity_type:
         one: Tipo de actividad
         other: Tipos de actividad
+        description: Los tipos de Actividad disponibles al crear una nueva Actividad
       company:
         one: Empresa
         other: Empresas
@@ -59,9 +60,11 @@ es:
       advice_type:
         one: Tipo de asesoramiento
         other: Tipos de asesoramiento
+        description: Los tipos de Asesoramiento disponibles al crear un nuevo asesoramiento
       project:
         one: Proyecto
         other: Proyectos
+        description: Los proyectos relacionados con cada empresa
       
     attributes:
       user:
@@ -132,3 +135,12 @@ es:
   member:
     index:
       heading: Lista de Usuarios
+  company:
+    index:
+      heading: Lista de Empresas
+  activity:
+    index:
+      heading: Lista de Actividades
+  advising:
+    index:
+      heading: Lista de Asesoramientos

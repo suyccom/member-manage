@@ -15,9 +15,21 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/"><t key="front.home">Home</t></nav-item>
-    <nav-item with="&Advising"><ht key="advising.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&Activity"><ht key="activity.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&Member"><ht key="member.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Advising">
+      <ht key="advising.nav_item" count="100">
+        <model-name-human count="100"/>
+      </ht>
+    </nav-item>
+    <nav-item with="&Activity">
+      <ht key="activity.nav_item" count="100">
+        <model-name-human count="100"/>
+      </ht>
+    </nav-item>
+    <nav-item with="&Member">
+      <ht key="member.nav_item" count="100">
+        <model-name-human count="100"/>
+      </ht>
+    </nav-item>
     <nav-item with="&Company">
       <ht key="company.nav_item" count="100">
         <model-name-human count="100"/>
