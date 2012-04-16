@@ -20,16 +20,6 @@ es:
     configuration: 
       name: "Configuración"
       welcome: "Elige la opción que deseas modificar:"
-  member/genders:
-    male: "Hombre"
-    female: "Mujer"
-  advising/contacttypes:
-    user: Usuario
-    company: Empresa
-    contact: Consulta
-  company/companytypes:
-    public: Pública
-    private: Privada
   attributes:
     created_at: Creado el
     updated_at: Actualizado el
@@ -87,6 +77,14 @@ es:
         member: Socio/a
         disability: Discapacidad
         disability_percent: Porcentaje de discapacidad
+        location: Población
+        province: Provincia
+        hearing_aid: Audífonos
+        hearing_aid_type: Tipo de audífono
+        hearing_aid_center: Centro audiológico
+      member/genders:
+        male: "Hombre"
+        female: "Mujer"
       activity:
         start_date: Fecha inicio
         end_date: Fecha fin
@@ -111,6 +109,11 @@ es:
         company: Empresa
         member: Usuario
         advice_type: Tipo de asesoramiento
+        contact_data: Datos de contacto
+      advising/contact_types:
+        user: Usuario
+        company: Empresa
+        contact: Consulta
       advice_type:
         name: Nombre
         description: Descripción
@@ -129,6 +132,9 @@ es:
         mobile: Teléfono móvil
         email: Email
         company_type: Tipo de empresa
+      company/company_types:
+        public: Pública
+        private: Privada
 #    attribute_help:
 #      user:
 #        email_address:

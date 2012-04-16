@@ -33,3 +33,5 @@ group :development, :test do
 end
 gem "hobo", "= 1.3.0"
 gem "rspec-rails", ">= 2.5.0", :group => [:test, :development]
+gem "hobo-jquery", :git => "git://github.com/bryanlarsen/hobo-jquery.git", :branch => "rails3"
+gem "meta_search", "=1.0.6"

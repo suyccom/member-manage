@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/bryanlarsen/hobo-jquery.git
+  revision: 3578efd55304328249a7df2a8167bc731dc0e608
+  branch: rails3
+  specs:
+    hobo-jquery (1.3.0pre1)
+
+GIT
   remote: git://github.com/thedarkone/rails-dev-boost.git
   revision: c648d229fa981c5f9bcbd8ac6baa520582c248c6
   specs:
@@ -57,6 +64,11 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_search (1.0.6)
+      actionpack (~> 3.0.2)
+      activerecord (~> 3.0.2)
+      activesupport (~> 3.0.2)
+      arel (~> 2.0.2)
     mime-types (1.16)
     polyglot (0.3.2)
     rack (1.2.3)
@@ -107,6 +119,8 @@ PLATFORMS
 DEPENDENCIES
   abstract
   hobo (= 1.3.0)
+  hobo-jquery!
+  meta_search (= 1.0.6)
   rails (= 3.0.10)
   rails-dev-boost!
   rspec-rails (>= 2.5.0)

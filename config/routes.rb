@@ -5,6 +5,8 @@ MemberManage::Application.routes.draw do
   
   match 'front/index' => 'front#index'
   match 'front/configuration' => 'front#configuration'
+  
+  match 'advisings/new' => 'advisings#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

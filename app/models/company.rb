@@ -2,8 +2,6 @@ class Company < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
   
-  Companytype = HoboFields::Types::EnumString.for(:public,:private)
-  
   fields do
     name :string
     address :string
@@ -15,7 +13,7 @@ class Company < ActiveRecord::Base
     phone :string
     mobile  :string
     email :email_address
-    company_type  Companytype
+    company_type  enum_string(:public, :private)
     timestamps
   end
   

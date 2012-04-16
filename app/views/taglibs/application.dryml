@@ -8,6 +8,11 @@
 
 <include src="hobo-contrib-all" plugin="hobo-contrib"/>
 
+<!-- Hobo Jquery -->
+<include gem="hobo-jquery" />
+
+<include plugin="hobo-metasearch" />
+
 <def tag="app-name">
   <t key="front.app_name">Member manage</t>
 </def>
@@ -52,5 +57,17 @@
         <t key="hobo.admin.subsite_name">Admin</t>
       </a>
     </footer:>
+    <custom-scripts:>
+      <hjq-assets/>
+    </custom-scripts>
   </old-page>
 </extend>
+
+
+<def tag="input" for="Date">
+  <hjq-datepicker dayNamesMin="&['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa']"
+    dateFormat="dd-mm-yy" 
+    firstDay="1" 
+    monthNames="&['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']"
+    monthNamesShort="&['Ene', 'Feb', 'Mar', 'Abr','May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']"  merge />
+</def>

@@ -2,8 +2,6 @@ class Member < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
-  Gender = HoboFields::Types::EnumString.for(:male, :female)
-
   fields do
     name               :string
     surname            :string
@@ -13,7 +11,7 @@ class Member < ActiveRecord::Base
     province           :string
     id_card            :string
     birth_date         :date
-    gender             Gender
+    gender             enum_string(:male, :female)
     phone              :string
     mobile             :string
     email              :email_address
