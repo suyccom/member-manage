@@ -1,0 +1,41 @@
+<new-page>
+  <form:>
+    <field-list: replace>
+      <seleccion-tipo/>
+      <campos-variables part="variables"/>
+      <campos-estaticos/>
+    </field-list:>
+  </form:>
+</new-page>
+
+
+<def tag="seleccion-tipo">
+  <field-list: fields="contact_type">
+    <contact-type-view:>
+      <input onchange="Hobo.ajaxRequest('/advisings/new', ['variables'], {params:'type=' + this.value})"/>
+    </contact-type-view:>
+  </field-list:>
+</def>
+
+
+<def tag="campos-variables">
+  <%
+    campos = "member"
+    campos = "company" if params[:type] == "company"
+    campos = "contact_data" if params[:type] == "contact"
+  %>
+  <field-list fields="&campos">
+    <company-view:>
+      <input blank-message="Seleccionar una empresa"/>
+    </company-view:>
+    <member-view:>
+      <input blank-message="Seleccionar un usuario"/>
+    </member-view:>
+  </field-list>
+</def>
+
+
+<def tag="campos-estaticos">
+  <br/>
+  <field-list fields="advice_type, advice_content"/>
+</def>

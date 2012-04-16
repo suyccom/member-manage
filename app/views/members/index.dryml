@@ -1,0 +1,7 @@
+<index-page>
+  <collection: replace>
+    <table-plus with="&@members" 
+      fields="this, email, phone, mobile, province, member" 
+      filters="name, surname, location, province, gender, member, disability, hearing_aid"/>
+  </collection>
+</index-page>
