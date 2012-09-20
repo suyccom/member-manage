@@ -98,8 +98,8 @@
     <aside: replace>
     </aside:>
     <prepend-content:>
-      <aside>
-        <nice-aside/>
+      <aside param>
+        <nice-aside param/>
       </aside>
     </prepend-content:>
     

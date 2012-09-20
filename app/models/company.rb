@@ -20,6 +20,8 @@ class Company < ActiveRecord::Base
   # --- Relations --- #
   has_many :projects
   has_many :advisings
+  children  :advisings
+
 
   # --- Permissions --- #
 

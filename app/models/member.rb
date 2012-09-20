@@ -27,8 +27,9 @@ class Member < ActiveRecord::Base
 
 	# --- Relations --- #
 	has_many :audiometries
-	children :audiometries
 	has_many :advisings
+	children :audiometries, :advisings
+
 	has_many :activities, :through => :member_activities
 	has_many :member_activities, :dependent => :destroy
 

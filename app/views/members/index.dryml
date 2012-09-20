@@ -1,7 +1,11 @@
 <index-page>
   <collection: replace>
     <table-plus with="&@members" 
-      fields="this, email, phone, mobile, province, member" 
+      fields="this, surname, address, phone, mobile, email " 
       filters="name, surname, location, province, gender, member, disability, hearing_aid"/>
   </collection>
 </index-page>
+
+
+
+

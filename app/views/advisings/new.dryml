@@ -1,5 +1,8 @@
+<% logger.info "new.dryml - @advising: #{@advising.inspect}"
+  %>
+
 <new-page>
-  <form:>
+  <form: with="&@advising">
     <field-list: replace>
       <seleccion-tipo/>
       <campos-variables part="variables"/>
@@ -24,12 +27,23 @@
     campos = "company" if params[:type] == "company"
     campos = "contact_data" if params[:type] == "contact"
   %>
+    
   <field-list fields="&campos">
     <company-view:>
-      <input blank-message="Seleccionar una empresa"/>
+      <if test="&params[:company_id]">
+        <select-menu name="advising[company_id]" options="&Company.all.map {|s| [s.name, s.id]}" selected="&params[:company_id]"/>
+      </if>
+      <else>
+        <input blank-message="Seleccionar una empresa"/>
+      </else>
     </company-view:>
     <member-view:>
-      <input blank-message="Seleccionar un usuario"/>
+      <if test="&params[:member_id]">
+        <select-menu name="advising[member_id]" options="&Member.all.map {|s| [s.name, s.id]}" selected="&params[:member_id]"/>
+      </if>
+      <else>
+        <input blank-message="Seleccionar un usuario"/>
+      </else>
     </member-view:>
   </field-list>
 </def>
