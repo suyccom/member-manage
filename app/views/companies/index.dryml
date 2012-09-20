@@ -1,0 +1,11 @@
+<index-page>
+  <collection: replace>
+    <div class="table-plus">
+      <table with="&@companies" fields="this, contact_person, phone, mobile, email" />
+    </div>
+  </collection>
+</index-page>
+
+
+
+

@@ -1,0 +1,22 @@
+<show-page>
+  <append-aside:>
+    <aside-chulo/>
+  </append-aside:>
+
+</show-page>
+
+<def tag="aside-chulo">
+    <br/>
+    <a href="/advisings/new?type=company&&company_id=#{@company.id}" param="new-link"><ht key="advising.actions.new">New Advising</ht></a>
+</def>
+
+<def tag="card" for="Advising">
+  <card class="advising" param="default" merge>
+    <header: param>
+      <a><h4 param="heading">Tipo de asesoramiento <this.advice-content/> </h4></a>
+      <div param="actions">
+        <delete-button label="X" param/>
+      </div>
+    </header:>
+  </card>
+</def>
