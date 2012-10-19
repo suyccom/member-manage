@@ -14,7 +14,10 @@ class Activity < ActiveRecord::Base
   # --- Relations --- #
   has_many :members, :through => :member_activities, :accessible => true
   has_many :member_activities, :dependent => :destroy
+  has_many :expenses, :accessible => true
   belongs_to :activity_type
+  
+  children :expenses, :members
 
   # --- Permissions --- #
 
