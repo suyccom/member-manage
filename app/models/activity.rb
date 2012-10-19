@@ -7,6 +7,7 @@ class Activity < ActiveRecord::Base
     end_date    :date
     title       :string
     content     :text
+    money       :decimal, :precision => 8, :scale => 2, :default => 0
     timestamps
   end
 

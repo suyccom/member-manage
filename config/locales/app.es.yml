@@ -92,6 +92,7 @@ es:
         activity_type: Tipo de actividad
         members: Usuarios
         content: Contenido
+        money: Dinero
       audiometry:
         audiometry_date: Fecha de audiometría
         audiometry_center: Centro de audiometría
@@ -135,10 +136,10 @@ es:
         company_type: Tipo de empresa
       company/company_types:
         public: Pública
-        private: Privada
-#    attribute_help:
-#      user:
-#        email_address:
+        private: 
+    attribute_help:
+      activity:
+        money: Cantidad de dinero destinada a esta actividad
   member:
     index:
       heading: Lista de Usuarios
