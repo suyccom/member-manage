@@ -91,6 +91,7 @@ es:
         title: Título
         activity_type: Tipo de actividad
         members: Usuarios
+        content: Contenido
       audiometry:
         audiometry_date: Fecha de audiometría
         audiometry_center: Centro de audiometría

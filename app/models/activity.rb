@@ -6,6 +6,7 @@ class Activity < ActiveRecord::Base
     start_date  :date
     end_date    :date
     title       :string
+    content     :text
     timestamps
   end
 

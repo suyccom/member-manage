@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120416160148) do
+ActiveRecord::Schema.define(:version => 20121019101212) do
 
   create_table "activities", :force => true do |t|
     t.date     "start_date"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20120416160148) do
     t.datetime "updated_at"
     t.integer  "activity_type_id"
     t.date     "end_date"
+    t.text     "content"
   end
 
   add_index "activities", ["activity_type_id"], :name => "index_activities_on_activity_type_id"
