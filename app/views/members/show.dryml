@@ -67,9 +67,9 @@
 <def tag="card" for="Audiometry">
   <card class="audiometry" param="default" merge>
     <header: param>
-      <h4 param="heading">Audiometría realizada el
-<!--       <this.audiometry-date.to-date/>-->
-       </h4>
+      <h4 param="heading" if="&this.audiometry_date">
+        Audiometría realizada el <this.audiometry-date.to-date/>
+      </h4>
       <div param="actions">
         <delete-button label="X" param/>
       </div>
