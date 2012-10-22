@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120416160148) do
+ActiveRecord::Schema.define(:version => 20121019103213) do
 
   create_table "activities", :force => true do |t|
     t.date     "start_date"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20120416160148) do
     t.datetime "updated_at"
     t.integer  "activity_type_id"
     t.date     "end_date"
+    t.text     "content"
+    t.decimal  "money",            :precision => 8, :scale => 2, :default => 0.0
   end
 
   add_index "activities", ["activity_type_id"], :name => "index_activities_on_activity_type_id"
@@ -87,6 +89,16 @@ ActiveRecord::Schema.define(:version => 20120416160148) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "expenses", :force => true do |t|
+    t.string   "concept"
+    t.decimal  "price",       :precision => 8, :scale => 2, :default => 0.0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "activity_id"
+  end
+
+  add_index "expenses", ["activity_id"], :name => "index_expenses_on_activity_id"
 
   create_table "member_activities", :force => true do |t|
     t.datetime "created_at"

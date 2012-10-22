@@ -6,13 +6,18 @@ class Activity < ActiveRecord::Base
     start_date  :date
     end_date    :date
     title       :string
+    content     :text
+    money       :decimal, :precision => 8, :scale => 2, :default => 0
     timestamps
   end
 
   # --- Relations --- #
   has_many :members, :through => :member_activities, :accessible => true
   has_many :member_activities, :dependent => :destroy
+  has_many :expenses, :accessible => true
   belongs_to :activity_type
+  
+  children :expenses, :members
 
   # --- Permissions --- #
 

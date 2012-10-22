@@ -1,0 +1,10 @@
+<show-page/>
+
+
+<def tag="card" for="Expense">
+  <card class="expense" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/> <this.price/></h4>
+    </header:>
+  </card>
+</def>
