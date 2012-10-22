@@ -93,6 +93,7 @@ es:
         members: Usuarios
         content: Contenido
         money: Dinero
+        expenses: Gastos
       audiometry:
         audiometry_date: Fecha de audiometría
         audiometry_center: Centro de audiometría
