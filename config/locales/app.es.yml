@@ -67,6 +67,7 @@ es:
         name: Nombre
         surname: Apellido
         address: Dirección
+        postal_code: Código postal
         id_card: DNI
         birth_date: Fecha de nacimiento
         gender: Sexo
