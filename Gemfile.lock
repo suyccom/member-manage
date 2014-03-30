@@ -170,4 +170,4 @@ DEPENDENCIES
   rspec-rails (>= 2.5.0)
   spork
   sqlite3
-  thin
+  thin (= 1.6.2)
