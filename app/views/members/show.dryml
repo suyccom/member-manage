@@ -1,11 +1,11 @@
 <show-page>
   <append-aside:>
-    <aside-chulo/>
+    <custom-aside/>
   </append-aside:>
 
 </show-page>
 
-<def tag="aside-chulo">
+<def tag="custom-aside">
     <br/>
     <a href="/advisings/new?member_id=#{@member.id}" param="new-link"><ht key="advising.actions.new">New Advising</ht></a>
 </def>
@@ -20,7 +20,6 @@
     </header:>
   </card>
 </def>
-
 
 <def tag="form" for="Audiometry">
   <form merge param="default">
@@ -63,7 +62,6 @@
   </form>
 </def>
 
-
 <def tag="card" for="Audiometry">
   <card class="audiometry" param="default" merge>
     <header: param>
@@ -76,38 +74,36 @@
     </header:>
     
     <body:>
-    
-    <field-list fields="audiometry_center"/>
-    
-    <div class="table-plus audiometry-input-table">
-      <table>
-        <thead>
-        <tr class="field-heading-row">
-          <th>Ear</th>
-          <th>500</th>
-          <th>1000</th>
-          <th>2000</th>
-          <th>3000/4000</th>
-        </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Right</td>
-            <td><this.re500/></td>
-            <td><this.re1000/></td>
-            <td><this.re2000/></td>
-            <td><this.re3000/></td>
+      <field-list fields="audiometry_center"/>
+      <div class="table-plus audiometry-input-table">
+        <table>
+          <thead>
+          <tr class="field-heading-row">
+            <th>Ear</th>
+            <th>500</th>
+            <th>1000</th>
+            <th>2000</th>
+            <th>3000/4000</th>
           </tr>
-          <tr>
-            <td>Left</td>
-            <td><this.le500/></td>
-            <td><this.le1000/></td>
-            <td><this.le2000/></td>
-            <td><this.le3000/></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Right</td>
+              <td><this.re500/></td>
+              <td><this.re1000/></td>
+              <td><this.re2000/></td>
+              <td><this.re3000/></td>
+            </tr>
+            <tr>
+              <td>Left</td>
+              <td><this.le500/></td>
+              <td><this.le1000/></td>
+              <td><this.le2000/></td>
+              <td><this.le3000/></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </body:>
   </card>
 </def>
