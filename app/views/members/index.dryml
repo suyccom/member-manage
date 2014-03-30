@@ -3,7 +3,7 @@
     <table-plus with="&@members" 
       fields="name, surname, member, address, phone, mobile, email " 
       filters="name, surname, location, province, gender, member, disability, hearing_aid">
-      <name-view:><a with='&this_parent'><%= this %></a></name-view:>
+      <name-view:><a with='&this_parent'/></name-view:>
       <email-view:><%= this %></email-view:>
     </table-plus>
   </collection>
