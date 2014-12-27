@@ -19,4 +19,15 @@ class AdvisingsController < ApplicationController
     )
   end
 
+  def show
+    hobo_show do
+      @more_records = Advising.advice_type_is(@advising.advice_type)
+      unless @advising.member.blank?
+        @more_records = @more_records.member_is(@advising.member)
+      end
+      unless @advising.company.blank?
+        @more_records = @more_records.company_is(@advising.company)
+      end
+    end
+  end
 end

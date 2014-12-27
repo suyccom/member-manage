@@ -14,6 +14,7 @@ es:
       nil: No disponible
   other:
     actions: Acciones
+    record: Historial
   front:
     app_name: Gestión de usuarios
     home: Inicio
@@ -112,13 +113,13 @@ es:
         le2000: Izquierdo 2000
         le3000: Izquierdo 3000
       advising:
-        advice_date: Fecha de asesoramiento
-        advice_content: Contenido del asesoramiento
-        contact_type: Tipo de contacto
+        advice_date: Fecha
+        advice_content: Contenido
+        contact_type: T. Contacto
         company: Empresa
         member: Usuario
-        advice_type: Tipo de asesoramiento
-        contact_data: Datos de contacto
+        advice_type: T. Asesoramiento
+        contact_data: Datos contacto
       advising/contact_types:
         user: Usuario
         company: Empresa
@@ -147,12 +148,18 @@ es:
     attribute_help:
       activity:
         money: Cantidad de dinero destinada a esta actividad
+    errors:
+      template:
+        header: "Error"
+        body: "Revise los siguientes problemas:"
   member:
     index:
       heading: Lista de Usuarios
+    erased: Usuario eliminado
   company:
     index:
       heading: Lista de Empresas
+    erased: Empresa eliminada
   activity:
     index:
       heading: Lista de Actividades
@@ -161,3 +168,7 @@ es:
       edit: Editar
     index:
       heading: Lista de Asesoramientos
+    name: Nombre
+    no_record: No hay mas registros de este tipo para este usuario
+    more_record: '%{count} registro(s) más de este tipo para este usuario'
+    no_contact_data: 'Contacto: sin mas información'

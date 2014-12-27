@@ -10,6 +10,42 @@
     </unless>
   </heading:>
   <content-body:>
-    <field-list skip="contact_type,member,company"/>
+    <%
+      # Add contact_data if contact_type is Contact
+      extra_fields = this.is_contact? ? ', contact_data' : ''
+    %>
+    <field-list fields="contact_type, advice_date, advice_type, advice_content #{extra_fields}"/>
   </content-body:>
+  <aside: replace>
+    <div class='aside'>
+      <div class='section'>
+        <h3><t key='other.actions'/></h3>
+        <a action='edit' if='&can_edit?' class='edit-link advising-link'>
+          <ht key='advising.actions.edit'/>
+        </a>
+      </div>
+      <div class='section'>
+        <h3><t key='other.record'/></h3>
+        <h6>
+          <if test='&@more_records.size > 1'>
+            <t key='advising.more_record' count="#{@more_records.size - 1}"/>
+          </if>
+          <else>
+            <t key='advising.no_record'/>
+          </else>
+        </h6>
+        <ul>
+          <%
+            # Push out myself from the recordset
+            temp=[]
+            @more_records.each{ |a| temp << a unless a == this }
+            @more_records = temp
+          %>
+          <repeat with='&@more_records'>
+            <li><a href="/advisings/#{this.id}"><%= l this.advice_date %></a>: <%= truncate(this.advice_content, :length => 30) %></li>
+          </repeat>
+        </ul>
+      </div>
+    </div>
+  </aside:>
 </show-page>
