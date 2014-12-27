@@ -10,10 +10,10 @@ class Advising < ActiveRecord::Base
     timestamps
   end
 
-	# --- Relations --- #
-	belongs_to :advice_type
-	belongs_to :member
-	belongs_to :company
+  # --- Relations --- #
+  belongs_to :advice_type
+  belongs_to :member
+  belongs_to :company
 
   # --- Calculated fields --- #
   def name
@@ -25,7 +25,6 @@ class Advising < ActiveRecord::Base
   end
 
   # --- Permissions --- #
-
   def create_permitted?
     acting_user.administrator?
   end
@@ -41,5 +40,4 @@ class Advising < ActiveRecord::Base
   def view_permitted?(field)
     true
   end
-
 end

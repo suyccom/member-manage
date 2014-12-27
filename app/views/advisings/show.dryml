@@ -1,0 +1,15 @@
+<show-page>
+  <parent-link: replace/>
+  <heading: style='border-bottom:0'>
+    <a with='&Advising'/> > 
+    <unless test='&this.company.blank?'>
+      <a with='&this.company'/>
+    </unless>
+    <unless test='&this.member.blank?'>
+      <a with='&this.member'/>
+    </unless>
+  </heading:>
+  <content-body:>
+    <field-list skip="contact_type,member,company"/>
+  </content-body:>
+</show-page>
