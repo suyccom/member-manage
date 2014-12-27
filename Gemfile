@@ -11,8 +11,9 @@ gem 'sqlite3'
 group :development, :test do
   #gem 'webrat'
   gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
-  gem 'thin', '1.6.2'
+  gem 'thin', '1.4.1'
   gem 'database_cleaner'
+  gem 'better_errors'
 end
 
 group :test do
@@ -21,4 +22,8 @@ group :test do
   gem "capybara"
   gem "capybara-webkit"
   gem "spork"
+end
+
+group :console do
+  gem 'awesome_print'
 end

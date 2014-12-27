@@ -8,15 +8,9 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module MemberManage
   class Application < Rails::Application
-  config.i18n.default_locale = :es
-  
-  
-  I18n.default_locale = :es
-#  config.hobo.show_translation_keys = true
-  
-  config.hobo.dryml_only_templates = true
+    config.hobo.show_translation_keys = false
+    config.hobo.dryml_only_templates = true
 
-  
     config.generators do |g|
       g.test_framework :rspec, :fixtures => true
       g.fallbacks[:rspec] = :test_unit
@@ -42,7 +36,7 @@ module MemberManage
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = :es
 
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)

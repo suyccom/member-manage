@@ -15,6 +15,15 @@ class Advising < ActiveRecord::Base
 	belongs_to :member
 	belongs_to :company
 
+  # --- Calculated fields --- #
+  def name
+    if self.company.blank? && !self.member.blank?
+      return self.member.name
+    elsif self.member.blank? && !self.company.blank?
+      return self.company.name
+    end
+  end
+
   # --- Permissions --- #
 
   def create_permitted?
