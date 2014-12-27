@@ -12,6 +12,8 @@ es:
   hobo:
     messages:
       nil: No disponible
+  other:
+    actions: Acciones
   front:
     app_name: Gestión de usuarios
     home: Inicio
@@ -155,5 +157,7 @@ es:
     index:
       heading: Lista de Actividades
   advising:
+    actions:
+      edit: Editar
     index:
       heading: Lista de Asesoramientos

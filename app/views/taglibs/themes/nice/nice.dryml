@@ -120,7 +120,7 @@
 <def tag="nice-aside">
   <!-- Edit link -->
   <div class='section' if="&can_edit?">
-    <h3>Actions</h3>
+    <h3><t key='other.actions'>Actions</t></h3>
     <a action="edit" param="edit-link">
       <t key="#{model.to_s.downcase}.actions.edit">Edit <%= model.to_s %></t>
     </a>

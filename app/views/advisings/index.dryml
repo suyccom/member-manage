@@ -1,5 +1,9 @@
 <index-page>
   <collection: replace>
-    <table-plus with="&@advisings" fields="advice_date, member, advice_type"/>
+    <table-plus with="&@advisings" fields="advice_date, name, advice_type">
+      <advice-date-view:>
+        <a with='&this_parent'><%= l this.advice_date, :format => :long %></a>
+      </advice-date-view:>
+    </table-plus>
   </collection>
 </index-page>

@@ -10,6 +10,7 @@ module MemberManage
   class Application < Rails::Application
     config.hobo.show_translation_keys = false
     config.hobo.dryml_only_templates = true
+
     config.generators do |g|
       g.test_framework :rspec, :fixtures => true
       g.fallbacks[:rspec] = :test_unit
