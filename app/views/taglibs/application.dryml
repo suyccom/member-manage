@@ -63,6 +63,14 @@
   </old-page>
 </extend>
 
+<extend tag="show-page" for="Member">
+  <old-show-page merge>
+    <field-list: fields='name,surname,address,postal_code,location,province,id_card,birth_date,gender,phone,mobile,email,
+      disability,disability_percent,hearing_aid,hearing_aid_type,hearing_aid_center,diagnosis'>
+      <email-view:><%= this %></email-view:>
+    </field-list:>
+  </old-show-page>
+</extend>
 
 <def tag="input" for="Date">
   <hjq-datepicker dayNamesMin="&['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa']"

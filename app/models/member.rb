@@ -25,16 +25,14 @@ class Member < ActiveRecord::Base
     timestamps
   end
 
-	# --- Relations --- #
-	has_many :audiometries
-	has_many :advisings
-	children :audiometries, :advisings
-
-	has_many :activities, :through => :member_activities
-	has_many :member_activities, :dependent => :destroy
+  # --- Relations --- #
+  has_many :audiometries
+  has_many :advisings
+  children :audiometries, :advisings
+  has_many :activities, :through => :member_activities
+  has_many :member_activities, :dependent => :destroy
 
   # --- Permissions --- #
-
   def create_permitted?
     acting_user.administrator?
   end
