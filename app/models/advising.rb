@@ -10,13 +10,12 @@ class Advising < ActiveRecord::Base
     timestamps
   end
 
-	# --- Relations --- #
-	belongs_to :advice_type
-	belongs_to :member
-	belongs_to :company
+  # --- Relations --- #
+  belongs_to :advice_type
+  belongs_to :member
+  belongs_to :company
 
   # --- Permissions --- #
-
   def create_permitted?
     acting_user.administrator?
   end
