@@ -9,6 +9,9 @@
 # please post it to http://hobousers.googlegroups.com. Thank you!
 
 es:
+  hobo:
+    messages:
+      nil: No disponible
   front:
     app_name: Gestión de usuarios
     home: Inicio

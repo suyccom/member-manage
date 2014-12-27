@@ -1,5 +1,5 @@
 <index-page>
   <collection: replace>
-    <table-plus with="&@advisings" fields="this, advice_type, member, advice_date"/>
+    <table-plus with="&@advisings" fields="advice_date, member, advice_type"/>
   </collection>
 </index-page>
