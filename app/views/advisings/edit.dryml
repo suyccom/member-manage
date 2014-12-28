@@ -1,4 +1,4 @@
-<new-page>
+<edit-page>
   <form: with="&@advising">
     <field-list: replace>
       <seleccion-tipo/>
@@ -6,15 +6,16 @@
       <campos-estaticos/>
     </field-list:>
   </form:>
-</new-page>
+</edit-page>
 
 <def tag="seleccion-tipo">
   <field-list: fields="contact_type">
     <contact-type-view:>
-      <input id='selector' onchange="Hobo.ajaxRequest('/advisings/new', 
+      <input id='selector' onchange="Hobo.ajaxRequest(jQuery('form.advising').attr('action') + '/edit',
         ['variables'], {
           message:'Espere por favor...', 
           spinnerNextTo: 'selector', 
+          method:'get', 
           params:'type=' + this.value
         })"/>
     </contact-type-view:>
@@ -23,9 +24,9 @@
 
 <def tag="campos-variables">
   <%
-    campos = "member"
-    campos = "company" if params[:type] == "company"
-    campos = "contact_data" if params[:type] == "contact"
+    campos = 'member' if params[:type] == 'user'
+    campos = 'company' if params[:type] == 'company'
+    campos = 'contact_data' if params[:type] == 'contact'
   %>
     
   <field-list fields="&campos">
@@ -40,9 +41,9 @@
 
 <def tag="campos-estaticos">
   <field-list fields="advice_date, advice_type, advice_content">
-    <advice-date-view:><input value="#{l Date.today}"/></advice-date-view:>
+    <advice-date-view:><input value="#{l this}"/></advice-date-view:>
     <advice-type-view:>
-      <select-menu name="advising[advice_type_id]" options="&AdviceType.all.map {|at| [at.name, at.id]}" first-option="#{t key='advising.new_edit_at'}"/>
+      <select-menu name="advising[advice_type_id]" options="&AdviceType.all.map {|at| [at.name, at.id]}" selected="&params[:advice_type_id]" first-option="#{t key='advising.new_edit_at'}"/>
     </advice-type-view:>
   </field-list>
 </def>

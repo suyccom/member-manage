@@ -1,6 +1,7 @@
 class Company < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
+  default_scope :order => 'name ASC'
   
   fields do
     name :string
@@ -22,9 +23,7 @@ class Company < ActiveRecord::Base
   has_many :advisings
   children  :advisings
 
-
   # --- Permissions --- #
-
   def create_permitted?
     acting_user.administrator?
   end

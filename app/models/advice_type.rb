@@ -1,6 +1,7 @@
 class AdviceType < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
+  default_scope :order => 'name ASC'
 
   fields do
     name        :string
@@ -8,11 +9,10 @@ class AdviceType < ActiveRecord::Base
     timestamps
   end
 
-	# --- Relations --- #
-	has_many :advisings
+  # --- Relations --- #
+  has_many :advisings
 
   # --- Permissions --- #
-
   def create_permitted?
     acting_user.administrator?
   end

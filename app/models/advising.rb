@@ -2,10 +2,13 @@ class Advising < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
+  include ActionView::Helpers::TextHelper # Need to use truncate here
+  Ctype = HoboFields::Types::EnumString.for(:user,:company,:contact)
+
   fields do
-    advice_date    :date
+    advice_date    :date, :required
     advice_content :text
-    contact_type enum_string(:user,:company,:contact)
+    contact_type   Advising::Ctype
     contact_data   :text
     timestamps
   end
@@ -17,11 +20,25 @@ class Advising < ActiveRecord::Base
 
   # --- Calculated fields --- #
   def name
-    if self.company.blank? && !self.member.blank?
-      return self.member.name
-    elsif self.member.blank? && !self.company.blank?
-      return self.company.name
+    if self.is_user?
+      return self.member.blank? ? I18n.t('member.erased') : self.member.name
+    elsif self.is_company?
+      return self.company.blank? ? I18n.t('company.erased') : self.company.name
+    elsif self.is_contact?
+      return self.contact_data.blank? ? I18n.t('advising.no_contact_data') : truncate(self.contact_data, :length => 30)
     end
+  end
+
+  def is_user?
+    return self.contact_type == 'user' ? true : false
+  end
+
+  def is_company?
+    return self.contact_type == 'company' ? true : false
+  end
+
+  def is_contact?
+    return self.contact_type == 'contact' ? true : false
   end
 
   # --- Permissions --- #
