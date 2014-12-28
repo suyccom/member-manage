@@ -2,12 +2,15 @@
   <parent-link: replace/>
   <heading: style='border-bottom:0'>
     <a with='&Advising'/> > 
-    <unless test='&this.company.blank?'>
+    <if test='&this.is_company?'>
       <a with='&this.company'/>
-    </unless>
-    <unless test='&this.member.blank?'>
+    </if>
+    <if test='&this.is_user?'>
       <a with='&this.member'/>
-    </unless>
+    </if>
+    <if test='&this.is_contact?'>
+      <span><t key='other.contact_type.contact'/></span>
+    </if>
   </heading:>
   <content-body:>
     <%
@@ -20,7 +23,21 @@
     <div class='aside'>
       <div class='section'>
         <h3><t key='other.actions'/></h3>
-        <a action='edit' if='&can_edit?' class='edit-link advising-link'>
+        <%
+          # Prepare edit page
+          if this.is_user?
+            type = 'user'
+            contact_type = 'member_id'
+            id = this.member_id
+          elsif this.is_company?
+            type = 'company'
+            contact_type = 'company_id'
+            id = this.company_id
+          elsif this.is_contact?
+            type = 'contact'
+          end
+        %>
+        <a action='edit' params="&{'advice_type_id' => this.advice_type_id,'type' => type, contact_type => id}" if='&can_edit?' class='edit-link advising-link'>
           <ht key='advising.actions.edit'/>
         </a>
       </div>

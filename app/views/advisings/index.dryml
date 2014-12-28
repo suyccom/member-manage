@@ -10,7 +10,7 @@
       <name-view:>
         <if test='&this_parent.is_user?'>
           <unless test='&this_parent.member.blank?'>
-            <a href="/members/#{this_parent.member.id}"><%= this %></a>
+            <a href="/members/#{this_parent.member.id}"><%= this_parent.member.name_long %></a>
           </unless>
           <else>
             <this/>

@@ -13,6 +13,8 @@ es:
     messages:
       nil: No disponible
   other:
+    contact_type:
+      contact: Contacto
     actions: Acciones
     record: Historial
     datepicker:
@@ -174,3 +176,10 @@ es:
     no_record: No hay mas registros de este tipo para este usuario
     more_record: '%{count} registro(s) más de este tipo para este usuario'
     no_contact_data: 'Contacto: sin mas información'
+    new_edit_member: Seleccione un usuario
+    new_edit_company: Seleccione una empresa
+    new_edit_at: Seleccione un Tipo de asesoramiento
+  advising/ctypes:
+    user: Usuario
+    company: Empresa
+    contact: Contacto
