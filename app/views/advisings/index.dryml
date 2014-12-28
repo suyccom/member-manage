@@ -2,8 +2,32 @@
   <collection: replace>
     <table-plus with="&@advisings" fields="advice_date, name, advice_type">
       <advice-date-view:>
-        <a with='&this_parent'><%= l this.advice_date, :format => :long %></a>
+        <a href="/advisings/#{this_parent.id}"><%= l this, :format => :long %></a>
       </advice-date-view:>
+      <name-heading:>
+        <t key='advising.name'/>
+      </name-heading:>
+      <name-view:>
+        <if test='&this_parent.is_user?'>
+          <unless test='&this_parent.member.blank?'>
+            <a href="/members/#{this_parent.member.id}"><%= this_parent.member.name_long %></a>
+          </unless>
+          <else>
+            <this/>
+          </else>
+        </if>
+        <if test='&this_parent.is_company?'>
+          <unless test='&this_parent.company.blank?'>
+            <a href="/companies/#{this_parent.company.id}"><%= this %></a>
+          </unless>
+          <else>
+            <this/>
+          </else>
+        </if>
+        <if test='&this_parent.is_contact?'>
+          <%= this %>
+        </if>
+      </name-view:>
     </table-plus>
   </collection>
 </index-page>

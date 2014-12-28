@@ -1,6 +1,7 @@
 class Member < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
+  default_scope :order => 'name ASC'
 
   fields do
     name               :string
@@ -23,6 +24,11 @@ class Member < ActiveRecord::Base
     hearing_aid_center :string
     diagnosis          :text
     timestamps
+  end
+
+  # --- Calculated fields --- #
+  def name_long
+    return [self.name, self.surname].join(' ')
   end
 
   # --- Relations --- #

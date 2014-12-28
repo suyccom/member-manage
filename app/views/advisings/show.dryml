@@ -2,14 +2,67 @@
   <parent-link: replace/>
   <heading: style='border-bottom:0'>
     <a with='&Advising'/> > 
-    <unless test='&this.company.blank?'>
+    <if test='&this.is_company?'>
       <a with='&this.company'/>
-    </unless>
-    <unless test='&this.member.blank?'>
+    </if>
+    <if test='&this.is_user?'>
       <a with='&this.member'/>
-    </unless>
+    </if>
+    <if test='&this.is_contact?'>
+      <span><t key='other.contact_type.contact'/></span>
+    </if>
   </heading:>
   <content-body:>
-    <field-list skip="contact_type,member,company"/>
+    <%
+      # Add contact_data if contact_type is Contact
+      extra_fields = this.is_contact? ? ', contact_data' : ''
+    %>
+    <field-list fields="contact_type, advice_date, advice_type, advice_content #{extra_fields}"/>
   </content-body:>
+  <aside: replace>
+    <div class='aside'>
+      <div class='section'>
+        <h3><t key='other.actions'/></h3>
+        <%
+          # Prepare edit page
+          if this.is_user?
+            type = 'user'
+            contact_type = 'member_id'
+            id = this.member_id
+          elsif this.is_company?
+            type = 'company'
+            contact_type = 'company_id'
+            id = this.company_id
+          elsif this.is_contact?
+            type = 'contact'
+          end
+        %>
+        <a action='edit' params="&{'advice_type_id' => this.advice_type_id,'type' => type, contact_type => id}" if='&can_edit?' class='edit-link advising-link'>
+          <ht key='advising.actions.edit'/>
+        </a>
+      </div>
+      <div class='section'>
+        <h3><t key='other.record'/></h3>
+        <h6>
+          <if test='&@more_records.size > 1'>
+            <t key='advising.more_record' count="#{@more_records.size - 1}"/>
+          </if>
+          <else>
+            <t key='advising.no_record'/>
+          </else>
+        </h6>
+        <ul>
+          <%
+            # Push out myself from the recordset
+            temp=[]
+            @more_records.each{ |a| temp << a unless a == this }
+            @more_records = temp
+          %>
+          <repeat with='&@more_records'>
+            <li><a href="/advisings/#{this.id}"><%= l this.advice_date %></a>: <%= truncate(this.advice_content, :length => 30) %></li>
+          </repeat>
+        </ul>
+      </div>
+    </div>
+  </aside:>
 </show-page>
