@@ -3,12 +3,12 @@ class Advising < ActiveRecord::Base
   hobo_model # Don't put anything above this
 
   include ActionView::Helpers::TextHelper # Need to use truncate here
-  Ctype = HoboFields::Types::EnumString.for(:user,:company,:contact)
+  Ctypeenumstring = HoboFields::Types::EnumString.for(:user,:company,:contact)
 
   fields do
     advice_date    :date, :required
     advice_content :text
-    contact_type   Advising::Ctype
+    contact_type   Advising::Ctypeenumstring
     contact_data   :text
     timestamps
   end
