@@ -12,7 +12,6 @@
     monthNamesShort="&['Ene', 'Feb', 'Mar', 'Abr','May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']" merge/>
 </def>
 
-
 <!-- Filters! -->
 
 <!-- Remove hidden-fields from table-plus search in order to avoid datepicker conflicts -->
@@ -39,24 +38,11 @@
           <submit label="&t('hobo.table_plus.submit_label', :default=>'Go')" class="search-button" param="search-submit"/>
           <input type="submit" class="button" value="Búsqueda avanzada" onclick="new Effect.BlindDown('busqueda-avanzada');$('busqueda-normal').hide(); return false;" />
         </form>
-        
-       <!-- Button to enable advanced search with Ajax (deprecated) -->
-<!--       <form style="float:right; margin-left:10px;" with="&Event.new" action="/events/index" update="div-busqueda" success="$('busqueda-normal').hide();">-->
-<!--         <input type="hidden" name="advanced" value="true"/>-->
-<!--         <input type="hidden" name="filters" value="&attributes[:filters]" />-->
-<!--         <submit class="button" label="Búsqueda avanzada" />-->
-<!--       </form>-->
-        
       </div>
     </div>
     <!-- Fin busqueda normal -->
     
-    
-    
     <!-- Comienzo busqueda avanzada -->
-    
-    
-
       <div>
       <% display = 'none' %>
       <% display = 'block' if params[:search] && params[:search].size > 1%>
@@ -67,12 +53,8 @@
           </a>
         </div>
         
-                
- 
-        
         <form with="&this.klass.new" method="get" style="padding:20px; background-color:#F0FFBB;">
         <fieldset class="feckless-fields horizontal filters">
-        
         
         <!-- Print standard filters -->
         <!-- Custom filter list comes from two possible places, 
@@ -99,13 +81,9 @@
         <!-- Fin busqueda avanzada -->
         </div>
         
-        
-        
-        
         <!-- Result counter -->
         <p style="text-align:right;"><%= this.total_entries %> resultados. Página <%= this.current_page %> de <%= this.total_pages %></p>
     </header:>
-    
     
     <!-- Sorting -->
     <field-heading-row:>
@@ -120,7 +98,6 @@
 
         <th param="#{scope.field_name}-heading">
 
-
 <%
 assocs = this.member_class.reflections.values.reject {|r| r.macro == :has_many }.map &its.name.to_s
 sort_field = col
@@ -134,29 +111,8 @@ sort_field += '_name' if assocs.include? col
       </with-field-names>
       <th if="&all_parameters[:controls]" class="controls"></th>
     </field-heading-row>
-    
-    
-    
   </old-table-plus>
 </extend>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <def tag="super-filter" attrs="clase, model">
 
@@ -168,7 +124,7 @@ sort_field += '_name' if assocs.include? col
     
     <% case clase.to_s
     
-    when /EnumString/ %>
+    when /.*EnumString/i %>
       <hjq-combobox adjustWidth="&false">
         <% if params[:search]
              selected = clase.values.detect {|o| o.to_s==params[:search][:"#{this.to_s}_equals"] } 
@@ -181,11 +137,6 @@ sort_field += '_name' if assocs.include? col
           translation = clase.to_s.tableize + '.' + value.to_s.downcase
           [translate(translation, :default => value.to_s), value]}" />
       </hjq-combobox>
-      
-
-
-
-    
    <% when /String|Text/ %>
       <% value = '' %>
       <% value = params[:search][:"#{this}_contains"] if params[:search] %>

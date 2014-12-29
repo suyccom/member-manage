@@ -179,7 +179,7 @@ es:
     new_edit_member: Seleccione un usuario
     new_edit_company: Seleccione una empresa
     new_edit_at: Seleccione un Tipo de asesoramiento
-  advising/ctypes:
+  advising/ctypeenumstrings:
     user: Usuario
     company: Empresa
     contact: Contacto
