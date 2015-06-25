@@ -7,10 +7,7 @@ class AdvisingsController < ApplicationController
   
   def index
     @search = Advising.search(params[:search])
-    @advisings = @search.paginate(:page => params[:page])
-    hobo_index Advising.apply_scopes(
-      :order => "advice_date desc"
-    )
+    @advisings = @search.paginate(:page => params[:page]).order('advice_date desc')
   end
 
   def show
