@@ -1,6 +1,6 @@
 <index-page>
   <collection: replace>
-    <table-plus with="&@advisings" fields="advice_date, name, advice_type">
+    <table-plus with="&@advisings" fields="advice_date, name, advice_type" filters='advice_date, advice_content, contact_type, contact_data'>
       <advice-date-view:>
         <a href="/advisings/#{this_parent.id}"><%= l this, :format => :long %></a>
       </advice-date-view:>
