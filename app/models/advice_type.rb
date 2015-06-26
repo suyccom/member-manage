@@ -23,6 +23,7 @@ class AdviceType < ActiveRecord::Base
 
   def destroy_permitted?
     acting_user.administrator?
+    self.advisings.blank?
   end
 
   def view_permitted?(field)

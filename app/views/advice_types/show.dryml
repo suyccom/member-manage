@@ -1,0 +1,6 @@
+<show-page:>
+  <main-nav:>
+    <custom-current current='&t key="front.configuration.name"'/>
+  </main-nav:>
+  <heading: style='border-bottom:0'/>
+</show-page:>
