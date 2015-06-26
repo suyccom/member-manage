@@ -61,6 +61,8 @@ es:
         one: Tipo de asesoramiento
         other: Tipos de asesoramiento
         description: Los tipos de Asesoramiento disponibles al crear un nuevo asesoramiento
+      advicetype:
+        other: Tipos de asesoramiento
       project:
         one: Proyecto
         other: Proyectos
@@ -169,9 +171,11 @@ es:
       heading: Lista de Actividades
   advising:
     actions:
+      new: Nuevo
       edit: Editar
     index:
       heading: Lista de Asesoramientos
+      title: Lista de Asesoramientos
     name: Nombre
     no_record: No hay mas registros de este tipo para este usuario
     more_record: '%{count} registro(s) más de este tipo para este usuario'
@@ -183,3 +187,13 @@ es:
     user: Usuario
     company: Empresa
     contact: Contacto
+  advice_type:
+    actions:
+      new: Nuevo
+      edit: Editar
+    index:
+      heading: Lista de Tipos de Asesoramiento
+      title: Lista de Tipos de Asesoramiento
+  advicetype:
+    actions:
+      edit: Editar

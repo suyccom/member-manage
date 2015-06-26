@@ -48,10 +48,12 @@ class Advising < ActiveRecord::Base
 
   def update_permitted?
     acting_user.administrator?
+    self.advice_date > Date.today - 1.week
   end
 
   def destroy_permitted?
     acting_user.administrator?
+    self.advice_date > Date.today - 1.day
   end
 
   def view_permitted?(field)

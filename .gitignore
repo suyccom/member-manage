@@ -7,3 +7,4 @@ config/hobo_routes.rb
 .rvmrc
 .ruby-version
 db/*.bak
+config/database.yml

@@ -7,6 +7,7 @@ gem "rspec-rails", ">= 2.5.0", :group => [:test, :development]
 gem "hobo-jquery", :git => "git://github.com/bryanlarsen/hobo-jquery.git", :branch => "rails3"
 gem "meta_search", "=1.0.6"
 gem 'sqlite3'
+gem 'activerecord-mysql2-adapter'
 
 group :development, :test do
   #gem 'webrat'
@@ -14,6 +15,7 @@ group :development, :test do
   gem 'thin', '1.4.1'
   gem 'database_cleaner'
   gem 'better_errors'
+  gem 'yaml_db'
 end
 
 group :test do

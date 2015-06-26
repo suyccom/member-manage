@@ -19,33 +19,37 @@
 
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
-    <nav-item href="#{base_url}/"><t key="front.home">Home</t></nav-item>
-    <nav-item with="&Advising">
-      <ht key="advising.nav_item" count="100">
-        <model-name-human count="100"/>
-      </ht>
-    </nav-item>
-    <nav-item with="&Activity">
-      <ht key="activity.nav_item" count="100">
-        <model-name-human count="100"/>
-      </ht>
-    </nav-item>
-    <nav-item with="&Member">
-      <ht key="member.nav_item" count="100">
-        <model-name-human count="100"/>
-      </ht>
-    </nav-item>
-    <nav-item with="&Company">
-      <ht key="company.nav_item" count="100">
-        <model-name-human count="100"/>
-      </ht>
-    </nav-item>
-    <nav-item href="/front/configuration">
-      <t key="front.configuration.name">
-        Configuration
-      </t>
-    </nav-item>
+    <main-nav-items/>
   </navigation>
+</def>
+
+<def tag='main-nav-items'>
+  <nav-item href="#{base_url}/"><t key="front.home">Home</t></nav-item>
+  <nav-item with="&Advising">
+    <ht key="advising.nav_item" count="100">
+      <model-name-human count="100"/>
+    </ht>
+  </nav-item>
+  <nav-item with="&Activity">
+    <ht key="activity.nav_item" count="100">
+      <model-name-human count="100"/>
+    </ht>
+  </nav-item>
+  <nav-item with="&Member">
+    <ht key="member.nav_item" count="100">
+      <model-name-human count="100"/>
+    </ht>
+  </nav-item>
+  <nav-item with="&Company">
+    <ht key="company.nav_item" count="100">
+      <model-name-human count="100"/>
+    </ht>
+  </nav-item>
+  <nav-item href="/front/configuration">
+    <t key="front.configuration.name">
+      Configuration
+    </t>
+  </nav-item>
 </def>
 
 <set-theme name="nice"/>
@@ -72,10 +76,24 @@
   </old-show-page>
 </extend>
 
+<extend tag='card' for='AdviceType'>
+  <old-card merge>
+    <header:>
+      <strong><a><name/></a></strong>: <%= truncate(this.description, :length => 80) %> <strong><a with='&this' action='edit'><t key='advice_type.actions.edit'/></a></strong>
+    </header:>
+  </old-card>
+</extend>
+
 <def tag="input" for="Date">
   <hjq-datepicker dayNamesMin="&['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa']"
     dateFormat="#{t('other.datepicker.default_date_format')}" 
     firstDay="1" 
     monthNames="&['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']"
     monthNamesShort="&['Ene', 'Feb', 'Mar', 'Abr','May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']"  merge />
+</def>
+
+<def tag='custom-current'>
+  <navigation merge>
+    <main-nav-items/>
+  </navigation>
 </def>

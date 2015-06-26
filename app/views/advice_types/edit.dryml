@@ -1,0 +1,5 @@
+<edit-page:>
+  <main-nav:>
+    <custom-current current='&t key="front.configuration.name"'/>
+  </main-nav:>
+</edit-page:>
